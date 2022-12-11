@@ -128,6 +128,14 @@ void CreateWindows(HINSTANCE hApp) {
                     cl = g_szWindowClassName2;
                     w = WS_SYSMENU | WS_CAPTION;
                     break;
+                case 2:
+                    cl = g_szWindowClassName2;
+                    w = WS_SYSMENU | WS_CAPTION;
+                    break;
+                case 3:
+                    cl = g_szWindowClassName;
+                    w = WS_SYSMENU | WS_CAPTION;
+                    break;
                 default:
                     cl = g_szWindowClassName3;
                     w = WS_SIZEBOX | WS_SYSMENU | WS_CAPTION | WS_MINIMIZEBOX | WS_MAXIMIZEBOX;
@@ -163,7 +171,3 @@ int WINAPI _tWinMain(HINSTANCE hApp, HINSTANCE hPrevApp, LPTSTR szCmdLine, int n
 
 }
 
-int main() {
-    CreatePreView();
-    return 0;
-}
