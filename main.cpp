@@ -31,48 +31,43 @@ LRESULT CALLBACK WindowProc2(HWND hwnd, UINT nMsg, WPARAM wParam, LPARAM lParam)
 }
 
 void CreatePreView() {
-
-    int i, j, n, x = 0;
+    int i, j;
     TCHAR buff[300] = _T("");
-    n = MATR_DIM - 1;
     for (i = 0; i < MATR_DIM; i++) {
-        for (j =  0; j < MATR_DIM; j ++) {
+        for (j = 0; j < MATR_DIM; j++) {
             matr[i][j] = 3;
 
         }
-    //_stprintf_s(buff, _T("%s%3d"), buff, matr[i][j]);
     }
-    for (i = 0; i < 3 ; i++) {
-        for (j =  0; j<MATR_DIM-i-1; j ++) {
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < MATR_DIM - i - 1; j++) {
             matr[i][j] = 1;
         }
     }
 
-    for (i = 6; i>=3 ; i--) {
-        for (j = 0; j<i; j++) {
+    for (i = 6; i >= 3; i--) {
+        for (j = 0; j < i; j++) {
             matr[i][j] = 2;
         }
     }
-    for (i = 1; i<3 ; i++) {
-        for (j = 0; j<MATR_DIM-(MATR_DIM-i); j++) {
+    for (i = 1; i < 3; i++) {
+        for (j = 0; j < MATR_DIM - (MATR_DIM - i); j++) {
             matr[i][j] = 0;
         }
     }
-    for (i = 3; i<5 ; i++) {
-        for (j = 0; j<MATR_DIM-i-1; j++) {
+    for (i = 3; i < 5; i++) {
+        for (j = 0; j < MATR_DIM - i - 1; j++) {
             matr[i][j] = 0;
         }
     }
-        //_stprintf_s(buff, _T("%s\n"), buff);
 
-        /*    matr[i][i] = 9;
-        }*/
-        for (i = 0; i < MATR_DIM; i++) {
-            for (j = 0; j < MATR_DIM; j++) {
-                _stprintf_s(buff, _T("%s%3d"), buff, matr[i][j]);
+    for (i = 0; i < MATR_DIM; i++) {
+        for (j = 0; j < MATR_DIM; j++) {
+            _stprintf_s(buff, _T("%s%3d"), buff, matr[i][j]);
 
-            }
-            _stprintf_s(buff, _T("%s\n"), buff);}
+        }
+        _stprintf_s(buff, _T("%s\n"), buff);
+    }
 
 
     MessageBox(NULL, buff, _T("Windows structure"), MB_OK);
